@@ -1,0 +1,22 @@
+ <h3>Introduzca criterios de busqueda</h3>
+ <form #formConsulta="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label value="Codigo">Codigo: </label>
+    <input type="text" name="codigo"  [(ngModel)]="idioma.codigo" #codigo="ngModel" style="margin-right: 15px">   
+    <label value="Nombre"> Nombre: </label>
+    <input type="text"  name="nombre" [(ngModel)]="idioma.nombre" #nombre="ngModel" style="margin-right: 15px;padding-right: 10px">  
+
+    <input type="submit" value="Filtrar"  >
+  </p>
+ </form>
+ {{ mensajeErr }}
+ <div *ngIf="filtrado>=0">
+  <div *ngIf="filtrado==1">
+    <ul  *ngFor="let local of idiomas" >
+    <li><b>{{ local.codigo }}</b> -> {{ local.nombre }}  </li>
+    </ul>
+  </div>
+  <div *ngIf="filtrado==0">
+    No encontrados Idiomas para estas condiciones
+  </div>
+ </div>

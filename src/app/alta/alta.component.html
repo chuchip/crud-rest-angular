@@ -1,0 +1,23 @@
+<h3>Alta</h3>
+<form #formConsulta="ngForm" (ngSubmit)="onSubmit()">
+ <p>
+   <label value="Codigo">Codigo: </label>
+   <input type="text" name="codigo"  [(ngModel)]="idioma.codigo" #codigo="ngModel" required>
+   <span *ngIf="codigo.touched && !codigo.valid">
+       Introduzca Codigo de Idioma
+     </span>
+   </p>
+   
+ <p>
+   <label value="Nombre">Nombre: </label>
+    <input type="text"  name="nombre" [(ngModel)]="idioma.nombre" #nombre="ngModel" required>  
+   <span *ngIf="nombre.touched && !nombre.valid">
+       Introduzca Descripcion de Idioma
+     </span>
+ </p>
+ 
+ <div>
+   <input type="submit" value="Consultar"  [disabled]="!formConsulta.form.valid">
+ </div>
+</form>
+

@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'crud-rest';
+  title = 'Mantenimiento de Idiomas';
+  swAlta=false;
+  swConsulta=false;
+  
+  irConsultar()
+  {
+    this.swAlta=false;
+    this.swConsulta=true;
+  }
+  irAlta()
+  {
+    this.swAlta=true;
+    this.swConsulta=false;
+  }
 }

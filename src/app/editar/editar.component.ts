@@ -14,7 +14,7 @@ export class EditarComponent implements OnInit {
   mensajeErr="";
   editado=-1;
 
-  private constructor (private _datosserver: DatosserverService) { 
+  constructor (private _datosserver: DatosserverService) { 
     this.idioma=new Locales();   
    }
 
@@ -27,11 +27,12 @@ export class EditarComponent implements OnInit {
 
   cancel()
   {
-    console.log("Cancelado");
+  //  console.log("Cancelado");
     this.visible.emit(null); 
   }
   onSubmit()
   {
+    console.log("Editando idioma "+this.idioma.codigo);
     this._datosserver.editarLocale(this.idioma).subscribe(
       resp => {          
         this.mensajeErr ="";

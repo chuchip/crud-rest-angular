@@ -17,7 +17,7 @@ export class DatosserverService {
     url:string;
 
   constructor(private _http:HttpClient) { 
-    this.url="http://localhost:8080/crudJavaEE/api/locale";
+    this.url="http://localhost:8080/restExample/api/locale";
   }
  
   getLocales(codigo,nombre): Observable<Locales[]>

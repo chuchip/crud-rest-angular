@@ -12,17 +12,26 @@
  {{ mensajeErr }}
  <div *ngIf="filtrado>=0">
   <div *ngIf="filtrado==1">
-    <ul  *ngFor="let local of idiomas" >
-    <li><b>{{ local.codigo }}</b> -> {{ local.nombre }} 
-        <span *ngIf="msgEditado==local.codigo" style="background-color: aqua" >
-         Registro Editado
-        </span>
+  
+    <div  *ngFor="let local of idiomas">
+      <div class="idioma">
+      <span class="texto_idioma">
+        <b>{{ local.codigo }}</b> -> {{ local.nombre }} 
+      </span>
+      <span class="botones_idioma">
         <button (click)="editar(local.codigo)" style="margin-left: 5px;margin-right: 5px">Editar</button>        
-        <div *ngIf="idiomaEditar==local.codigo">
-          <app-editar (visible)="editado($event)" [codigo]="local.codigo" [nombre]="local.nombre"></app-editar>
-        </div>      
-        <button (click)="borrar(local.codigo)" style="margin-left: 5px;margin-right: 5px">Borrar</button> </li>
-    </ul>
+        
+        <button (click)="borrar(local.codigo)" style="margin-left: 5px;margin-right: 5px">Borrar</button> 
+      
+        </span>
+      </div>
+      <div *ngIf="idiomaEditar==local.codigo">
+            <app-editar (visible)="editado($event)" [codigo]="local.codigo" [nombre]="local.nombre"></app-editar>
+      </div>      
+      <span *ngIf="msgEditado==local.codigo" style="background-color: aqua" >
+              Registro Editado
+      </span> 
+    </div>
   </div>
   <div *ngIf="filtrado==0">
     No encontrados Idiomas para estas condiciones

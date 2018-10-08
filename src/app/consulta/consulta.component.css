@@ -1,0 +1,17 @@
+.idioma
+{
+    border: 1px dotted brown ;
+    height: 30px;
+    width: 450px;
+    background-color: beige ;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.texto_idioma
+{
+    float:left;
+}
+.botones_idioma
+{
+    float:right; 
+}

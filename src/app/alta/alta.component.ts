@@ -22,7 +22,9 @@ export class AltaComponent implements OnInit {
     this._datosserver.introducirLocales(this.idioma).subscribe(
       resp => {          
         this.mensajeErr ="";
-        this.introducido=1;          
+        this.introducido=1;   
+        this.idioma.codigo="";
+        this.idioma.nombre="";       
       },
         error => {        
           this.introducido=0;  

@@ -23,9 +23,15 @@ export class ConsultaComponent implements OnInit {
   }
 
   editado(local: Locales) {
-    console.log("Editado: " + local.codigo + " nombre: " + local.nombre);
-    this.msgEditado = local.codigo;
     this.idiomaEditar = null;
+    console.log("Idioma editado: "+local)
+    if (local==null)
+    {
+      this.msgEditado = null;
+      return;
+    }
+    //console.log("Editado: " + local.codigo + " nombre: " + local.nombre);
+    this.msgEditado = local.codigo;    
     interval(3000).subscribe(
       val => this.msgEditado=null
     );

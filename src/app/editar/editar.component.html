@@ -17,10 +17,11 @@
     <button (click)="cancel();; $event.preventDefault()">Cancelar</button>
  </form>
  
- <div *ngIf="introducido==1">
+ <div *ngIf="editado==1">
    <h3>Idioma Introducido</h3>  
  </div>
- <div *ngIf="introducido==0">
+ <div *ngIf="editado==0" style="background-color: darkkhaki">
    <h3>Error al Introducir Idioma {{mensajeErr}}</h3>  
  </div>
+
 </div>

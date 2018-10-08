@@ -1,5 +1,5 @@
 <h3>Alta</h3>
-<form #formConsulta="ngForm" (ngSubmit)="onSubmit()">
+<form id="formConsulta" #formConsulta="ngForm" (ngSubmit)="onSubmit()">
  <p>
    <label value="Codigo">Codigo: </label>
    <input type="text" name="codigo"  [(ngModel)]="idioma.codigo" #codigo="ngModel" required>
@@ -17,7 +17,12 @@
  </p>
  
  <div>
-   <input type="submit" value="Consultar"  [disabled]="!formConsulta.form.valid">
+   <input type="submit" value="Insertar"  [disabled]="!formConsulta.form.valid">
  </div>
 </form>
-
+<div *ngIf="introducido==1">
+  <h3>Idioma Introducido</h3>  
+</div>
+<div *ngIf="introducido==0">
+  <h3>Error al Introducir Idioma {{mensajeErr}}</h3>  
+</div>

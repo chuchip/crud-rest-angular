@@ -7,11 +7,13 @@ import { AltaComponent } from './alta/alta.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { EditarComponent } from './editar/editar.component';
 @NgModule({
   declarations: [
     AppComponent,
     ConsultaComponent,
-    AltaComponent   
+    AltaComponent,
+    EditarComponent   
   ],
   imports: [
     BrowserModule,
